@@ -50,15 +50,116 @@
 .nav ul li a:hover::after {
     width: 100px;
 }
-
-body {
+#header {
     background-image: url('/assets/img/bag.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    position: fixed;
+    position: relative; /* Change fixed to relative */
     width: 100%;
-    height: 100%;
+    height: 100vh; /* Make sure it takes the full height of the viewport */
+    padding-bottom: 60px; /* Add padding to ensure footer is visible */
 }
 
-/* navbar css end here*/
 
+body {
+    background-color: #e74c3c;
+    background-size: cover;
+
+}
+
+/* navbar css end here
+#sologan {
+    height: 230px;
+    width: 600px;
+    color: black;
+    padding-left: 20px;
+    padding-top: 10px;
+    background-color: rgba(0, 0, 0, 0.5); /* Black with 50% transparency
+
+    margin-top: 100px;
+    margin-left: 50px;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 10px;
+
+}*/
+.welcome {
+    margin-top: 80px;
+    margin-left: 60px;
+    font-style: italic;
+}
+
+.welcome h1 {
+    animation: fadeIn 1s ease-in-out;
+}
+
+.welcome h2 {
+    margin-left: 70px;
+    color: green;
+    animation: fadeIn 1s ease-in-out 1s; /* Animation with a delay of 1 second */
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.login-form {
+    float: right;
+    background: rgba(255, 255, 255, 0.5); /* More transparent white background */
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 180px;
+    margin-right: 40px;
+}
+
+.login-form h2 {
+    text-align: center;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.login-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #ff6b6b; /* Change to your desired button color */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.login-form button:hover {
+    background-color: #ff6b6b; /* Darker shade for hover effect */
+}
+
+.login-form p {
+    text-align: center;
+}
+
+.login-form a {
+    color:black; /* Link color */
+    text-decoration: underline;
+}
+
+.login-form a:hover {
+    text-decoration: underline;
+}
