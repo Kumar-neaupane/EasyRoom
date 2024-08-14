@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    @include('hnavbar');
     <form id="room-listing-form">
         <!-- Section 1: Basic Details -->
         <div class="section">
@@ -223,5 +224,6 @@
         });
     </script>
 </body>
+@include('footer')
 
 </html>

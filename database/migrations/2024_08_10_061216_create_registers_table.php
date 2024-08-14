@@ -14,10 +14,9 @@ return new class extends Migration
         Schema::create('registers', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('email');
-            $table->integer('number');
+            $table->string('email')->unique();
+            $table->string('number');
             $table->string('password');
-            $table->string('cpassword');
             $table->timestamps();
         });
     }

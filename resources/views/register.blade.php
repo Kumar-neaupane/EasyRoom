@@ -13,20 +13,20 @@
             background-size: cover;
             background-repeat: no-repeat;
             display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            flex-direction: column;
+            min-height: 100vh;
             margin: 0;
         }
 
         .container {
             background-color: rgba(255, 255, 255, 0.5);
-            /* Transparent background */
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             width: 300px;
             text-align: center;
+            flex: 1;
+            margin: auto;
         }
 
         h2 {
@@ -96,43 +96,56 @@
             color: blue;
             text-decoration: underline;
             font-weight: bold;
-
         }
 
         .login-link a:hover {
             text-decoration: underline;
             color: blue;
         }
+
+        .foo {
+            margin-top: 30px;
+        }
+
+        .header {
+            margin-bottom: 30px;
+        }
     </style>
 </head>
 
 <body>
+    <div class="header">
+        @include('hnavbar') <!-- Navbar stays on top -->
+    </div>
+
     <div class="container">
         <h2>Register</h2>
-        <form id="registrationForm">
+        <form id="registrationForm" method="POST" action="/store" enctype="multipart/form-data">
+            @csrf
             <div class="form-group">
                 <label for="name">Name:</label>
-                <input type="text" id="name" placeholder="Enter your name" required>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
                 <span class="validation-icon" id="name-icon"></span>
             </div>
             <div class="form-group">
                 <label for="number">Phone Number:</label>
-                <input type="text" id="number" placeholder="Enter your phone number" required>
+                <input type="text" name="number" id="number" placeholder="Enter your phone number" required>
                 <span class="validation-icon" id="number-icon"></span>
             </div>
             <div class="form-group">
                 <label for="email">Email:</label>
-                <input type="email" id="email" placeholder="Enter your email" required>
+                <input type="email" name="email" id="email" placeholder="Enter your email" required>
                 <span class="validation-icon" id="email-icon"></span>
             </div>
             <div class="form-group">
                 <label for="password">Password:</label>
-                <input type="password" id="password" placeholder="Enter your password" required>
+                <input type="password" name="password" id="password" placeholder="Enter your password" required>
                 <span class="validation-icon" id="password-icon"></span>
             </div>
             <div class="form-group">
                 <label for="confirmPassword">Confirm Password:</label>
-                <input type="password" id="confirmPassword" placeholder="Confirm your password" required>
+                <input type="password" name="password_confirmation" id="confirmPassword"
+                    placeholder="Confirm your password" required>
                 <span class="validation-icon" id="confirmPassword-icon"></span>
             </div>
             <button type="submit">Register</button>
@@ -240,6 +253,9 @@
             }
         }
     </script>
+    <div class="foo">
+        @include('footer') <!-- Footer stays at the bottom -->
+    </div>
 </body>
 
 </html>
